@@ -1,0 +1,140 @@
+:root {
+  --w: min(700px, 90%);
+  --b-r: 10px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+}
+
+span,
+input {
+  display: inline-block;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.flex, .q-row,
+.a-row,
+.z-row,
+.space-row, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #323437;
+}
+
+main {
+  width: var(--w);
+}
+
+.layer div + div {
+  margin-top: 0.7rem;
+}
+
+.q-row,
+.a-row,
+.z-row,
+.space-row {
+  --clr: white;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.keys {
+  border-radius: var(--b-r);
+  border: 1px solid white;
+  padding: 1rem 1.5rem;
+  transition: 0.6s ease;
+}
+
+.q-row {
+  width: 100%;
+  --clr: orangered;
+}
+.q-row > span {
+  border-color: var(--clr);
+}
+
+.a-row {
+  width: 90%;
+  --clr: orange;
+}
+.a-row > span {
+  border-color: var(--clr);
+}
+
+.z-row {
+  width: 73%;
+  --clr: yellow;
+}
+.z-row > span {
+  border-color: var(--clr);
+}
+
+.space-row {
+  --text: #323437;
+  width: 40%;
+}
+.space-row .spacebar {
+  width: 100%;
+  text-align: center;
+}
+
+.sqz {
+  animation-name: squeeze;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  background-color: var(--clr);
+  color: var(--text);
+}
+
+@keyframes squeeze {
+  100% {
+    transform: scale(0.85);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

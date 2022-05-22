@@ -1,0 +1,136 @@
+@use "./utilites.scss" as *;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+label {
+  display: block;
+}
+span,
+input {
+  display: inline-block;
+}
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin br($size, $color) {
+  border: $size solid $color;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  font: {
+    family: "Courier New", Courier, monospace;
+    size: 1.2rem;
+    weight: 700;
+  }
+  background: {
+    color: #323437;
+  }
+  @extend .flex;
+}
+main {
+  width: var(--w);
+}
+.layer {
+  div + div {
+    margin-top: 0.7rem;
+  }
+}
+.q-row,
+.a-row,
+.z-row,
+.space-row {
+  --clr: white;
+  margin: 0 auto;
+  @extend .flex;
+  justify-content: space-between;
+}
+.keys {
+  border-radius: var(--b-r);
+  @include br(1px, white);
+  padding: 1rem 1.5rem;
+  transition: 0.6s ease;
+}
+.q-row {
+  // @include br(1px, orange);
+  width: 100%;
+  --clr: orangered;
+
+  & > span {
+    border-color: var(--clr);
+  }
+}
+.a-row {
+  // @include br(1px, red);
+  width: 90%;
+  --clr: orange;
+
+  & > span {
+    border-color: var(--clr);
+  }
+}
+.z-row {
+  // @include br(1px, yellow);
+  width: 73%;
+  --clr: yellow;
+
+  & > span {
+    border-color: var(--clr);
+  }
+}
+.space-row {
+  // @include br(1px, white);
+  --text: #323437;
+  width: 40%;
+
+  .spacebar {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.sqz {
+  animation-name: squeeze;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+
+  background: {
+    color: var(--clr);
+  }
+  color: var(--text);
+}
+@keyframes squeeze {
+  100% {
+    transform: scale(0.85);
+  }
+}
