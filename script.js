@@ -5,23 +5,18 @@ body.addEventListener('keypress', keyboard);
 function keyboard(e) {
     let letter = e.key;
     if (e.key == ' ') { letter = 'space' }
-
-    if (checker(letter)) { return console.log('false') }
+    let pattern = /[;'!-_,.]/;
+    let pool = pattern.test(letter);
+    if (pool) {
+        return console.log('fail')
+    }
     let Lkey = document.querySelector(`[data-key=${letter}]`)
     remove()
-    Lkey.classList.add('sqz');
+    return Lkey.classList.add('sqz');
 }
 
 function remove() {
     Array.from(keys).forEach(e => {
         return e.classList.remove('sqz');
     })
-}
-function checker(key) {
-    let props = String(key).toLowerCase();
-
-    let value = Array.from(keys).some(e => {
-        e.classList.contains(`${props}`);
-    })
-    return console.log(`value: ${value}`);
 }
