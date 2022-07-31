@@ -134,3 +134,8 @@ main {
     transform: scale(0.85);
   }
 }
+@media screen and (max-width: 450px) {
+  .layer {
+    --w: 90%;
+  }
+}
