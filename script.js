@@ -21,3 +21,4 @@ function remove() {
     })
 }
 console.log('hi from windows')
+console.log('hi from ubuntu_VM')
