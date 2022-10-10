@@ -20,3 +20,4 @@ function remove() {
         return e.classList.remove('sqz');
     })
 }
+console.log('hi')
